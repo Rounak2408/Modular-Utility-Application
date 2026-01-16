@@ -1,0 +1,28 @@
+{
+  "name": "modular-utility-app",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A modular utility application with ES6+ syntax and TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npx http-server . -p 8080 -o",
+    "dev": "tsc --watch",
+    "watch": "tsc --watch"
+  },
+  "keywords": [
+    "typescript",
+    "es6",
+    "utility",
+    "modular"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "http-server": "^14.1.1",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modular Utility Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=3.0">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🔧 Modular Utility Application</h1>
+            <p class="subtitle">ES6+ TypeScript Utilities</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Utility Selector Card -->
+            <div class="card utility-selector-card">
+                <h2>⚡ Select Utility</h2>
+                <div class="utility-buttons">
+                    <button id="calculator-btn" class="utility-btn active" data-utility="calculator">
+                        🧮 Calculator
+                    </button>
+                    <button id="formatter-btn" class="utility-btn" data-utility="formatter">
+                        📝 Text Formatter
+                    </button>
+                </div>
+            </div>
+
+            <!-- Calculator Panel -->
+            <div id="calculator-panel" class="card utility-panel active">
+                <h2>🧮 Calculator</h2>
+                <form id="calculator-form" class="utility-form">
+                    <div class="form-group">
+                        <label for="calc-operation">Operation</label>
+                        <select id="calc-operation" name="operation" required>
+                            <option value="add">Addition (+)</option>
+                            <option value="subtract">Subtraction (-)</option>
+                            <option value="multiply">Multiplication (×)</option>
+                            <option value="divide">Division (÷)</option>
+                            <option value="power">Power (^)</option>
+                            <option value="sqrt">Square Root (√)</option>
+                            <option value="percentage">Percentage (%)</option>
+                            <option value="average">Average</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calc-value1">First Value</label>
+                        <input type="number" id="calc-value1" name="value1" step="any" required>
+                    </div>
+
+                    <div class="form-group" id="calc-value2-group">
+                        <label for="calc-value2">Second Value</label>
+                        <input type="number" id="calc-value2" name="value2" step="any">
+                    </div>
+
+                    <div class="form-group hidden" id="calc-multiple-group">
+                        <label for="calc-multiple">Additional Values (comma-separated)</label>
+                        <input type="text" id="calc-multiple" name="multiple" placeholder="e.g., 10, 20, 30">
+                    </div>
+
+                    <button type="submit" class="btn-primary">Calculate</button>
+                </form>
+            </div>
+
+            <!-- Text Formatter Panel -->
+            <div id="formatter-panel" class="card utility-panel">
+                <h2>📝 Text Formatter</h2>
+                <form id="formatter-form" class="utility-form">
+                    <div class="form-group">
+                        <label for="format-operation">Format Type</label>
+                        <select id="format-operation" name="operation" required>
+                            <option value="titleCase">Title Case</option>
+                            <option value="camelCase">Camel Case</option>
+                            <option value="kebabCase">Kebab Case</option>
+                            <option value="snakeCase">Snake Case</option>
+                            <option value="uppercase">Uppercase</option>
+                            <option value="lowercase">Lowercase</option>
+                            <option value="truncate">Truncate</option>
+                            <option value="reverse">Reverse</option>
+                            <option value="wordCount">Word Count</option>
+                            <option value="removeSpaces">Remove Spaces</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="format-input">Input Text</label>
+                        <textarea id="format-input" name="input" rows="4" required placeholder="Enter text to format..."></textarea>
+                    </div>
+
+                    <div class="form-group hidden" id="truncate-length-group">
+                        <label for="truncate-length">Max Length</label>
+                        <input type="number" id="truncate-length" name="length" min="1" value="50">
+                    </div>
+
+                    <button type="submit" class="btn-primary">Format Text</button>
+                </form>
+            </div>
+
+            <!-- Result Output Card -->
+            <div id="result-card" class="card result-card hidden">
+                <h2>✨ Result</h2>
+                <div id="result-content" class="result-content"></div>
+                <button id="clear-result" class="btn-secondary">Clear Result</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Built with TypeScript & ES6+ Modules</p>
+        </footer>
+    </div>
+
+    <script type="module" src="dist/app.js"></script>
+</body>
+</html>
